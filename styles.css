@@ -7,8 +7,13 @@ p {
     color: #FFFFFF;
   }
 
+  
 /* header section */
 
+.navbar-light{
+  padding-top:10px;
+  padding-bottom:10px;
+}
 .navbar-brand{
     font-family: 'Roboto', sans-serif;
     font-size: 40px;
@@ -20,8 +25,7 @@ p {
 .navbar{
   /* padding: 0 0 4.5rem; */
   font-size: 20px;
-  padding-bottom: 100px;
-
+  padding-bottom: 25px;
   background-color: #3c8dad;
   text-decoration-color: #FFFFFF;
 }
@@ -47,8 +51,9 @@ p {
 
 /* footer section */
 footer{
-  padding-top: 100px;
+  padding-top: 50px;
   text-align: center;
+  
 }
 
 
@@ -56,13 +61,15 @@ footer{
   padding: 7% 15%;
   background-color: red;
   margin:0;
-  padding-top: 20px;
+  padding-top: 17px;
   background-color: #3c8dad;
+  padding-bottom: 40px;
 }
 
 .social{
   text-align: center;
-  padding-top: 100px;
-  margin: 50px 10px;
+  padding-top: 50px;
+  margin: 30px 10px;
 
 }
+

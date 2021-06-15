@@ -47,10 +47,10 @@ session_start();
 	      <ul class="navbar-nav justify-content-end">
 
 					<li class="nav-item">
-						<a style="text-decoration:none" class="nav-link" href="#">About</a>
+						<a style="text-decoration:none" class="nav-link" href="#"><b>About</b></a>
 					</li>
 					<li class="nav-item">
-						<a style="text-decoration:none" class="nav-link" href="#footer">Contact</a>
+						<a style="text-decoration:none" class="nav-link" href="#footer"><b>Contact</b></a>
 					</li>
 </div>
 
@@ -115,12 +115,13 @@ if (isset($_SESSION['login']))
 {
 	//echo '<th align=\"right\"> </div><a class="btn btn-info" href=\"signout.php\">Sign Out</a></th>';
 
-	echo "<div align=\"right\"><strong><a href=\"index.php\"> Home </a> | <td>
-	<a href='update.php?uid=$_SESSION[login]'>Update Profile</a>
-	</td> | <a href=\"signout.php\">Sign Out</a> | <a
-	href='delete.php?uid=$_SESSION[login]'>Delete Account</a></strong></div>";
+	echo "<div align=\"right\"><strong><a class='btn btn-success' href=\"index.php\"> Home </a> | <td>
+	<a class='btn btn-primary' href='update.php?uid=$_SESSION[login]'>Update Profile</a>
+	</td> | <a class='btn btn-warning' onclick='return confirm('Are you sure to logout?');' value='click' href=\"signout.php\" >Sign Out</a> |
+	 <a class='btn btn-danger'
+	href='delete.php?uid=$_SESSION[login]' onclick='return confirm('Are you sure to delete account?');'>Delete Account</a></strong></div>";
 
-	echo "<h1 class='text-center bg-danger'>Welcome to Online Exam</h1>";
+	echo "<h1 class='text-center bg-info'>Welcome to Online Exam</h1>";
 		echo '<table width="28%"  border="0" align="center">
   	<tr>
 		<td width="7%" height="65" valign="bottom"><img src="image/HLPBUTT2.JPG" width="50" height="50" align="middle"></td>
@@ -128,9 +129,11 @@ if (isset($_SESSION['login']))
 	</tr>
 	<tr>
 		<td height="58" valign="bottom"><img src="image/DEGREE.JPG" width="43" height="43" align="absmiddle"></td>
-		<td valign="bottom"> <a href="result.php" class="style4">Result </a></td>
+		<td valign="bottom" > <a href="result.php" class="style4">Result </a></td>
+		
 	</tr>
-	</table>';
+	</table>
+	<br><br>';
 		exit;
 }
 
@@ -141,7 +144,12 @@ if (isset($_SESSION['login']))
   <tr>
     <td height="296" valign="top"><div align="center">
         <h1 class="style8">Welcome to Online Quiz</h1>
-      <span class="style5"><img src="image/paathshala.jpg" width="129" height="100"><span class="style7"><img src="image/HLPBUTT2.JPG" width="50" height="50"><img src="image/BOOKPG.JPG" width="43" height="43"></span>        </span>
+      <span class="style5"><img src="image/paathshala.jpg" width="129" height="100">
+	  <span class="style7">
+	  <img src="image/HLPBUTT2.JPG" width="50" height="50">
+	  <img src="image/BOOKPG.JPG" width="43" height="43">
+	  </span>        
+	  </span>
         <param name="movie" value="english theams two brothers.dat">
         <param name="quality" value="high">
         <param name="movie" value="Drag to a file to choose it.">
@@ -149,13 +157,14 @@ if (isset($_SESSION['login']))
         <param name="BGCOLOR" value="#FFFFFF">
 <p align="left" class="style5">&nbsp;</p>
       <blockquote>
-          <p align="left" class="style5"><span class="style7">WelCome to Online
-            exam. This Site will provide the quiz for various subject of interest.
-            You need to login for the take the online exam.</span></p>
+          <h4 align="center" class="style5"><span class="style7">Welcome to Online
+            Exam. This site will provide the quiz for various subject of interest.
+            You need to login to take the online exam.</span></h4>
       </blockquote>
     </div></td>
     		<table align="center" border="0" WIDTH="50%" height="250">
 			<h1 class="text-center bg-warning">LOGIN PAGE</h1>
+			<br>
 		<form method="post" action="">
 		<center>
 		<img class="img-circle" src="1.jpg"  title="this is my profile pic" width="240px" height="190px" border="1" />
@@ -168,7 +177,7 @@ if (isset($_SESSION['login']))
 				</th>
 				<tr>
 					<th class="text-primary">ENTER PASSWORD</th>
-					<th><input class="form-control" type="password" name="pass" id="pass2"/></th>
+					<th><input class="form-control" type="password" placeholder="PASSWORD" name="pass" id="pass2"/></th>
 					</tr>
 					       <?php
 		  if(isset($found))
@@ -182,9 +191,9 @@ if (isset($_SESSION['login']))
           </span></td>
          <th></th>
 				<th class="errors">
-					<input class="btn btn-danger "type="submit" name="submit" id="submit" Value="Login"/>
+					<input class="btn btn-primary "type="submit" name="submit" id="submit" Value="Login"/>
 
-        <a class="btn btn-success " href="signup.php">New user ? click here</a></th>
+        <a class="btn btn-success " href="signup.php">Register / Sign Up</a></th>
       </table>
       <div align="center">
         <p class="style5"><img src="images/topleft.jpg" width="134" height="128">          </p>
@@ -196,10 +205,10 @@ if (isset($_SESSION['login']))
 
 	<footer class ="footer" id="footer">
 		<div class="container-fluid">
-			<i class="social fab fa-linkedin"></i>
-			<i class="social fab fa-facebook"></i>
-		<i class="social fab fa-instagram"></i>
-		 <i class="social fab fa-twitter"></i>
+			<h3 class="social fab fa-linkedin"></h3>
+			<h3 class="social fab fa-facebook"></h3>
+		<h3 class="social fab fa-instagram"></h3>
+		 <h3 class="social fab fa-twitter"></h3>
 		 <p>© Copyright 2021 EKLAVYA</p>
 	 </div>
 	</footer>
